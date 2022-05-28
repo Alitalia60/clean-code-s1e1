@@ -8,12 +8,17 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-const taskInput=document.getElementById('new-task');//Add a new task.
+// const taskInput=document.getElementById('new-task');//Add a new task.
+const taskInput=document.querySelector('.new-task__item-content');//Add a new task.
+
 // const addButton=document.getElementsByTagName('button')[0];//first button
 const addButton=document.querySelector('.button-add');//first button
 
-const incompleteTaskHolder=document.getElementById('incomplete-tasks');//ul of #incomplete-tasks
-const completedTasksHolder=document.getElementById('completed-tasks');//completed-tasks
+// const incompleteTaskHolder=document.getElementById('incomplete-tasks');//ul of #incomplete-tasks
+const incompleteTaskHolder=document.querySelector('.task-list__incomplete');//ul of #incomplete-tasks
+
+// const completedTasksHolder=document.getElementById('completed-tasks');//completed-tasks
+const completedTasksHolder=document.querySelector('.task-list__complete');//completed-tasks
 
 
 //New task list item
@@ -49,10 +54,12 @@ const createNewTaskElement=function(taskString){
 
     editButton.innerText='Edit'; //innerText encodes special characters, HTML does not.
     // editButton.className='edit';
-    editButton.classList.add('button', 'button-mode', 'edit');
+    // editButton.classList.add('button', 'button-mode', 'edit');
+    editButton.classList.add('button', 'button-mode');
 
     // deleteButton.className='delete';
-    deleteButton.classList.add('button', 'button-delete', 'delete');
+    // deleteButton.classList.add('button', 'button-delete', 'delete');
+    deleteButton.classList.add('button', 'button-delete');
     deleteButtonImg.src='./assets/remove.svg';
     deleteButton.appendChild(deleteButtonImg);
 
@@ -97,7 +104,8 @@ const editTask=function(){
     const label=listItem.querySelector('.task-list__item-title');
     // const editBtn=listItem.querySelector('.edit');
     const editBtn=listItem.querySelector('.button-mode');
-    const containsClass=listItem.classList.contains('edit-mode');
+    // const containsClass=listItem.classList.contains('edit-mode');
+    const containsClass=listItem.classList.contains('task-list__item_edit-mode');
     //If class of the parent is .edit-mode
     if(containsClass){
 
@@ -105,13 +113,17 @@ const editTask=function(){
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText='Edit';
+        listItem.classList.add('task-list__item')
+        listItem.classList.remove('task-list__item_edit-mode')
     }else{
         editInput.value=label.innerText;
         editBtn.innerText='Save';
+        listItem.classList.add('task-list__item_edit-mode')
+        listItem.classList.remove('task-list__item')
     }
 
     //toggle .edit-mode on the parent.
-    listItem.classList.toggle('edit-mode');
+    // listItem.classList.toggle('edit-mode');
 };
 
 

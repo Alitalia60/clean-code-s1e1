@@ -15,40 +15,41 @@
   <div class="actions-wrapper">
     <p>
       <label class="new-task" for="new-task">Add Item</label>
-    <section class="new-task-wrapper">
-      <input class="new-task__item-content task" id="new-task" type="text">
-      <button class="button-add button">Add</button>
-    </section>
+      <section class="new-task-wrapper">
+        <input class="new-task__item-content task" id="new-task" type="text">
+        <button class="button-add button">Add</button>
+      </section>
     </p>
     <h3>Todo</h3>
-    <ul class="task-list" id="incomplete-tasks">
+    <ul class="task-list task-list__incomplete">
       <li class="task-list__item">
         <input class="task-list__item-status" type="checkbox">
         <label class="task-list__item-title task">Pay Bills</label>
         <input class="task-list__item-content task" type="text">
-        <button class="button button-mode edit">Edit</button>
-        <button class="button button-delete delete">
+        <button class="button button-mode">Edit</button>
+        <button class="button button-delete">
           <img src="./assets/remove.svg" alt="imgage-animator">
         </button>
       </li>
-      <li class="task-list__item edit-mode">
+      <!-- <li class="task-list__item task-list__item_edit-mode"> -->
+      <li class="task-list__item_edit-mode">
         <input class="task-list__item-status" type="checkbox">
         <label class="task-list__item-title task">Go Shopping</label>
         <input class="task-list__item-content task" type="text" value="Go Shopping">
-        <button class="button button-mode edit">Save</button>
-        <button class="button button-delete delete">
+        <button class="button button-mode">Save</button>
+        <button class="button button-delete">
           <img src="./assets/remove.svg" alt="imgage-animator">
         </button>
       </li>
     </ul>
     <h3>Completed</h3>
-    <ul class="task-list task-list_completed" id="completed-tasks">
+    <ul class="task-list task-list__complete">
       <li class="task-list__item">
         <input class="task-list__item-status" type="checkbox" checked>
         <label class="task-list__item-title task">See the Doctor</label>
         <input class="task-list__item-content task" type="text">
-        <button class="button button-mode edit">Edit</button>
-        <button class="button button-delete delete">
+        <button class="button button-mode">Edit</button>
+        <button class="button button-delete">
           <img src="./assets/remove.svg" alt="imgage-animator">
         </button>
       </li>

@@ -118,7 +118,8 @@ h3,
 
 /* Task list */
 
-.task-list__item {
+.task-list__item,
+.task-list__item_edit-mode {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -160,8 +161,7 @@ h3,
 
 /* Completed */
 
-.task-list_completed
-.task-list__item-title {
+.task-list__complete .task-list__item-title {
   text-decoration: line-through;
   color: #888;
 }
@@ -174,14 +174,16 @@ h3,
   display: none
 }
 
-  .edit-mode>.task-list__item-content,
-  .new-task__item-content {
+/* .edit-mode>.task-list__item-content, */
+.task-list__item_edit-mode>.task-list__item-content,
+.new-task__item-content {
   display: inline-block;
   width: 224px
 }
 
-.edit-mode>.task-list__item-title{
-  display: none;
+/* .edit-mode>.task-list__item-title { */
+.task-list__item_edit-mode>.task-list__item-title { 
+    display: none;
 }
 
 @media (max-width:768px) {
